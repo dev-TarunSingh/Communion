@@ -6,7 +6,7 @@
 }
 
 .home-title {
-  font-size: 3rem;
+    font-size: 3.8rem;
   font-weight: bold;
 }
 
@@ -31,15 +31,16 @@
 
 .tag {
   display: inline-block;
-  background: #e5e7eb;
-  color: black;
+  background: #007bff5e;
+  color: #007bff;
   padding: 8px 12px;
   border-radius: 20px;
   font-size: 14px;
+  margin: 0;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
 }
 
@@ -77,6 +78,7 @@ h2 img {
 
 .cta-btn {
   background: black;
+  color: white;
   padding: 12px 20px;
   border: none;
   font-size: 1rem;
@@ -95,22 +97,42 @@ h2 img {
 }
 
 .gallery-image {
-  width: 180px;
-  height: 280px;
-  border-radius: 50px;
+  width: 200px;
+  height: 380px;
+  border-radius: 999999px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
+.gallery-image:nth-child(1) {
+  margin-top: 80px;
+}
+.gallery-image:nth-child(2) {
+  margin-top: 30px;
+}
+
+
 .gallery-image:hover {
   transform: translateY(-15px);
+}
+
+@media (max-width: 1000px) {
+    .text-content {
+    max-width: 100%;
+    }
+
 }
 
 @media (max-width: 768px) {
   .content-wrapper {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+  }
+
+  .gallery-image {
+    margin-top: 0 !important; 
   }
 
   .text-content {
