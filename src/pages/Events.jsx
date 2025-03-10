@@ -1,68 +1,57 @@
-import { useState } from 'react';
+import React from "react";
+import events from "../data/events";
+import "./EventsPage.css";
 
-function Events() {
-  const [events, setEvents] = useState([]);
-  const [newEvent, setNewEvent] = useState({ title: '', date: '', category: '' });
-  const [filter, setFilter] = useState('');
-
-  const handleAddEvent = () => {
-    setEvents([...events, newEvent]);
-    setNewEvent({ title: '', date: '', category: '' });
-  };
-
-  const filteredEvents = events.filter(event => 
-    filter === '' || event.category === filter
-  );
-
+const Events = () => {
   return (
-    <div>
-      <h1>Event Listing</h1>
-      <div>
-        <label>
-          Filter by Category:
-          <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-            <option value="">All</option>
-            <option value="Religious">Religious</option>
-            <option value="Social">Social</option>
-            <option value="Charity">Charity</option>
-          </select>
-        </label>
+    <section className="events-section">
+      <h2 className="events-title">We Helped Communities Connect & Flourish</h2>
+      <p className="events-subtitle">✨ Upcoming Events</p>
+
+      <div className="filters">
+        {["Today", "Tomorrow", "This Week", "Next Week", "This Month"].map(
+          (filter) => (
+            <button key={filter} className="filter-btn">
+              {filter}
+            </button>
+          )
+        )}
       </div>
-      <ul>
-        {filteredEvents.map((event, index) => (
-          <li key={index}>
-            <h2>{event.title}</h2>
-            <p>{event.date}</p>
-            <p>{event.category}</p>
-            <p>{event.description}</p>
-          </li>
+
+      <div className="events-grid">
+        {events.map((event) => (
+          <div key={event.id} className="event-card">
+            <div className="event-image-container">
+              <img
+                src={event.image}
+                alt={event.title}
+                className="event-image"
+              />
+              <div className="date-badge">
+                <p>{event.month}</p>
+                <p>{event.day}</p>
+              </div>
+            </div>
+
+            <div className="event-content">
+              <span className={`event-tag ${event.tagClass}`}>{event.tag}</span>
+              <h3 className="event-title">{event.title}</h3>
+              <p className="event-date">
+                📅 {event.date} <br /> ⏰ {event.time}
+              </p>
+              <a href="#" className="event-link">
+                ⭐ Join others in this event
+              </a>
+            </div>
+
+            <div className="event-button-container">
+              <button className="event-button">Event Details →</button>
+            </div>
+          </div>
         ))}
-      </ul>
-      <div>
-        <h2>Add New Event</h2>
-        <input
-          type="text"
-          placeholder="Title"
-          value={newEvent.title}
-          onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-        />
-        <input
-          type="date"
-          value={newEvent.date}
-          onChange={(e) => setNewEvent({ ...newEvent, date: e.target.value })}
-        />
-        <select
-          value={newEvent.category}
-          onChange={(e) => setNewEvent({ ...newEvent, category: e.target.value })}
-        >
-          <option value="Religious">Religious</option>
-          <option value="Social">Social</option>
-          <option value="Charity">Charity</option>
-        </select>
-        <button onClick={handleAddEvent}>Add Event</button>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default Events;

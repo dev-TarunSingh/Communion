@@ -1,0 +1,161 @@
+/* Events Section */
+.events-section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* Section Title */
+.events-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.events-subtitle {
+  font-size: 1.25rem;
+  color: #1d4ed8;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.filter-btn {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  color: #333;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.event-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: #333 0 4px 10px;
+}
+
+.event-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.date-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: black;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.event-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.event-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 15px;
+  margin-bottom: 8px;
+}
+
+.tag-donation {
+  background-color: #bfdbfe;
+  color: #1e3a8a;
+}
+
+.tag-free {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.event-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.event-link {
+  color: #1d4ed8;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.event-button-container {
+  padding: 1rem;
+}
+
+.event-button {
+  display: block;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.event-button:hover {
+  background: #333;
+}
+
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
