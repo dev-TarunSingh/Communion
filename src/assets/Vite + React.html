@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://localhost:5173/create-event -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./Vite + React_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + React</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/tarun/Desktop/CommunionHub/src/index.css">@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100wh;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #d9dadf;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #ffffff;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #d9dadf;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+</style><style type="text/css" data-vite-dev-id="C:/Users/tarun/Desktop/CommunionHub/src/pages/HomePage.css">.home-container {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-title {
+  font-size: 3.8rem;
+  font-weight: bold;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  color: gray;
+  margin-bottom: 30px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.text-content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.tag {
+  display: inline-block;
+  background: #007bff5e;
+  color: #007bff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+h2 img {
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.avatar-image {
+  width: 150px;
+  height: auto;
+}
+
+.avatar-group img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.avatar-group span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  margin: 20px 0;
+}
+
+.cta-btn {
+  background: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #333;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 20px;
+}
+
+.gallery-image {
+  width: 200px;
+  height: 380px;
+  border-radius: 999999px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:nth-child(1) {
+  margin-top: 80px;
+}
+.gallery-image:nth-child(2) {
+  margin-top: 30px;
+}
+
+.gallery-image:hover {
+  transform: translateY(-15px);
+}
+
+@media (max-width: 1000px) {
+  .text-content {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .gallery-image {
+    margin-top: 0 !important;
+  }
+
+  .text-content {
+    max-width: 90%;
+  }
+
+  .avatar-image {
+    display: flex;
+    justify-content: center;
+  }
+}
+</style><style type="text/css" data-vite-dev-id="C:/Users/tarun/Desktop/CommunionHub/src/pages/EventsPage.css">/* Events Section */
+.events-section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* Section Title */
+.events-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.events-subtitle {
+  font-size: 1.25rem;
+  color: #1d4ed8;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.filter-btn {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  color: #333;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.event-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: #333 0 4px 10px;
+}
+
+.event-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.date-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: black;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.event-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.event-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 15px;
+  margin-bottom: 8px;
+}
+
+.tag-donation {
+  background-color: #bfdbfe;
+  color: #1e3a8a;
+}
+
+.tag-free {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.event-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.event-link {
+  color: #1d4ed8;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.event-button-container {
+  padding: 1rem;
+}
+
+.event-button {
+  display: block;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.event-button:hover {
+  background: #333;
+}
+
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style><style type="text/css" data-vite-dev-id="C:/Users/tarun/Desktop/CommunionHub/src/App.css">.app-header {
+  width: 100%;
+  padding: 15px 20px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  background: #fff;
+}
+
+.logo {
+  height: 50px;
+  transition: height 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-btn:focus + .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdown-menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: #f4f4f4;
+}
+
+.nav-bar a:hover {
+  text-decoration: underline;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -110%;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000000;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.4s ease-in-out;
+  display: none;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.mobile-dropdown-menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.mobile-dropdown-menu a:hover {
+  background: #f4f4f4;
+}
+
+.mobile-menu.open {
+  left: 0;
+  display: flex;
+}
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.mobile-menu a {
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.close-btn {
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-bar a {
+    padding: 5px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .logo {
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .nav-bar a {
+    padding: 5px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+}
+</style></head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./Vite + React_files/main.jsx"></script>
+  
+
+</body></html>
